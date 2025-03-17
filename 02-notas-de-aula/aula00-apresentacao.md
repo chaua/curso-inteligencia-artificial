@@ -1,2 +1,0 @@
-# 🎓 Aula00 - Apresentação
-
