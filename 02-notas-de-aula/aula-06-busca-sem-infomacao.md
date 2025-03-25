@@ -11,7 +11,21 @@ description: Algoritmos de busca em largura, profundidade e aprofundamento itera
 * **Capítulo 1 - RUSSELL, Stuart J.; NORVIG, Peter.** _Inteligência Artificial: Uma Abordagem Moderna._ 3. ed. São Paulo: Prentice Hall, 2010.&#x20;
 {% endhint %}
 
-##
+```mermaid
+graph TD
+    A --> B
+    A --> C
+    A --> D
+    B --> E
+    B --> F
+    D --> G
+    G:::goal
+
+    classDef goal fill:#90ee90,stroke:#333,stroke-width:2px;
+
+```
+
+
 
 ##
 
