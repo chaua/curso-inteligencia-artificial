@@ -78,6 +78,12 @@ Q . . .
 . . Q .
 ```
 
+## Exemplo de código-fonte
+
+{% embed url="https://gist.github.com/chaua/5db603aa55689592ce40faf27bf0ae7e" %}
+
+
+
 ## :books: **Referências Bibliográficas**
 
 * **RUSSELL, Stuart J.; NORVIG, Peter.** _Inteligência Artificial: Uma Abordagem Moderna._ 3. ed. São Paulo: Prentice Hall, 2010
