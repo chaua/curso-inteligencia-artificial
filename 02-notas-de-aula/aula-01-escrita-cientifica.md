@@ -10,15 +10,17 @@ description: Fundamentos da escrita científica, normas e boas práticas.
 * [Slides](slides/Aula00%20-%20Apresenta%C3%A7%C3%A3o%20da%20disciplina.pdf)&#x20;
 {% endhint %}
 
-## **Introdução**
+## **1. Introdução**
 
 A escrita científica é uma habilidade essencial para pesquisadores. Um bom texto deve ser **claro, objetivo, coeso e preciso**. O excesso de palavras, estrutura desorganizada e falta de rigor comprometem a compreensão do trabalho acadêmico.
 
-## **Problemas Comuns na Escrita Científica**
+***
+
+## **2. Problemas Comuns na Escrita Científica**
 
 Os principais erros cometidos na redação científica incluem:
 
-### **Uso Excessivo de Palavras**
+### **2.1 Uso Excessivo de Palavras**
 
 A qualidade de um texto está na **clareza e precisão**, não na quantidade de palavras.
 
@@ -34,7 +36,7 @@ _A realização de um estudo sobre o impacto do uso excessivo de redes sociais n
 _Este estudo analisa o impacto do uso excessivo de redes sociais no desempenho acadêmico._
 {% endhint %}
 
-### **Uso de Verbos Fracos ou Vagos**
+### **2.2 Uso de Verbos Fracos ou Vagos**
 
 Os verbos devem ser diretos para fortalecer a mensagem.
 
@@ -52,7 +54,7 @@ Os verbos devem ser diretos para fortalecer a mensagem.
 * _A pesquisa examina o efeito da poluição na saúde pública._
 {% endhint %}
 
-### **Redundâncias e Pleonasmos**
+### **2.3 Redundâncias e Pleonasmos**
 
 Evite repetições desnecessárias.
 
@@ -72,9 +74,11 @@ Evite repetições desnecessárias.
 * _Surpresa_
 {% endhint %}
 
-## **Estruturação do Texto Científico**
+***
 
-### **Organização das Frases**
+## **3. Estruturação do Texto Científico**
+
+### **3.1 Organização das Frases**
 
 Frases bem estruturadas melhoram a compreensão do leitor.
 
@@ -90,7 +94,7 @@ _A adoção de medidas preventivas para evitar o desperdício de água nas indú
 _O uso consciente da água na indústria reduz o impacto ambiental._
 {% endhint %}
 
-### **Trilho das Ideias**
+### **3.2 Trilho das Ideias**
 
 * **Cada parágrafo deve abordar uma única ideia.**
 * **Evite fragmentação:** frases soltas quebram a continuidade do texto.
@@ -104,11 +108,13 @@ _O uso consciente da água na indústria reduz o impacto ambiental._
 4. **Discussão:** Relaciona os resultados com a literatura científica.
 5. **Conclusão:** Resume os principais achados e sugere novas pesquisas.
 
-## **Uso Correto da Pontuação**
+***
+
+## **4. Uso Correto da Pontuação**
 
 A pontuação impacta diretamente a interpretação do texto. Algumas regras importantes:
 
-### **Uso da Vírgula**
+### **4.1 Uso da Vírgula**
 
 * Para separar itens em listas:\
   &#xNAN;_&#x4F; estudo envolveu alunos, professores e gestores educacionais._
@@ -117,7 +123,7 @@ A pontuação impacta diretamente a interpretação do texto. Algumas regras imp
 * Para separar informações explicativas:\
   &#xNAN;_&#x41;lbert Einstein, físico alemão, revolucionou a ciência com a teoria da relatividade._
 
-### **Uso do Ponto**
+### **4.2 Uso do Ponto**
 
 O ponto final ajuda a segmentar ideias e tornar o texto mais compreensível.
 
@@ -133,9 +139,11 @@ _O aumento do consumo de produtos industrializados está diretamente relacionado
 _O consumo de produtos industrializados cresce com a urbanização. Esse fenômeno aumenta a produção de resíduos e impacta o meio ambiente._
 {% endhint %}
 
-## **O que Evitar em um Texto Científico**
+***
 
-### **Uso de Primeira Pessoa**
+## **5. O que Evitar em um Texto Científico**
+
+### **5.1 Uso de Primeira Pessoa**
 
 Textos científicos devem ser impessoais, evitando o uso de _eu_ ou _nós_.
 
@@ -147,7 +155,7 @@ _Desenvolvemos um modelo matemático para prever a propagação de doenças._
 _Foi desenvolvido um modelo matemático para prever a propagação de doenças._
 {% endhint %}
 
-### **Uso de Expressões Coloquiais**
+### **5.2 Uso de Expressões Coloquiais**
 
 Expressões informais devem ser substituídas por termos técnicos.
 
@@ -159,7 +167,9 @@ _Esse estudo tenta mostrar que o problema é sério._
 _Este estudo demonstra a gravidade do problema._
 {% endhint %}
 
-## **Importância das Citações e Referências**
+***
+
+## **6. Importância das Citações e Referências**
 
 * Todo artigo deve citar fontes relevantes.
 * O uso correto de citações dá **credibilidade** ao trabalho.
@@ -167,7 +177,9 @@ _Este estudo demonstra a gravidade do problema._
   * _Segundo Oliveira et al. (2020), o impacto da poluição atmosférica na saúde tem aumentado._
   * _Estudos recentes mostram a relação entre alimentação e longevidade (Santos, 2021)._
 
-## :closed\_book: **Considerações Finais**
+***
+
+## **Considerações Finais**
 
 A escrita científica deve ser **clara, objetiva e rigorosa**. Aplicando essas diretrizes, o texto se torna mais compreensível e eficiente. Checklist para um bom texto científico:
 
@@ -177,6 +189,8 @@ A escrita científica deve ser **clara, objetiva e rigorosa**. Aplicando essas d
 * [x] Evita repetições e redundâncias
 * [x] Formata bem tabelas e figuras
 * [x] Cita fontes corretamente
+
+***
 
 ## :books: Referências Bibliográficas
 

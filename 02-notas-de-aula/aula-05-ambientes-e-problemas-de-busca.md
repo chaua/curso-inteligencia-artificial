@@ -2,239 +2,116 @@
 description: Estruturas de problemas, espaços de estados e ambientes de busca.
 ---
 
-# 🤖 Aula 05 - Ambientes e problemas de busca
+# 🌎 Aula 05 - Ambientes e problemas de busca
 
 {% hint style="info" %}
 ## **Material da aula**
 
-*
-* **Capítulo 1 - RUSSELL, Stuart J.; NORVIG, Peter.** _Inteligência Artificial: Uma Abordagem Moderna._ 3. ed. São Paulo: Prentice Hall, 2010.&#x20;
+* [Slides](slides/Aula05%20-%20Resolu%C3%A7%C3%A3o%20de%20problemas%20por%20meio%20de%20busca.pdf)
+* **Capítulo 3 - RUSSELL, Stuart J.; NORVIG, Peter.** _Inteligência Artificial: Uma Abordagem Moderna._ 3. ed. São Paulo: Prentice Hall, 2010.&#x20;
 {% endhint %}
 
-## Exemplos de modelagem
+## 1. Introdução
 
-### **Quebra-cabeça 8 (8-Puzzle)**
+A resolução de problemas por meio de busca é uma abordagem central em Inteligência Artificial (IA), utilizada para tomar decisões e encontrar soluções em ambientes onde o agente não possui todas as respostas prontas.
 
-Você tem um tabuleiro 3x3 com 8 peças numeradas e um espaço vazio (`0`). O objetivo é mover as peças uma a uma para que fiquem na ordem certa.
+## 1. Tipos de Ambientes
 
-**Objetivo final:** colocar as peças assim:
+### 1.1 Observabilidade
 
-```
-1 2 3
-4 5 6
-7 8 0
-```
+<table data-card-size="large" data-view="cards"><thead><tr><th>Tipo</th><th>Descrição</th><th>Exemplo</th></tr></thead><tbody><tr><td><strong>Completamente Observável</strong></td><td>O agente tem acesso total ao estado do ambiente por meio dos sensores.</td><td>Jogo de xadrez — todas as peças visíveis.</td></tr><tr><td><strong>Parcialmente Observável</strong></td><td>O agente não consegue observar todo o ambiente, exigindo memória ou inferência.</td><td>Dirigir em neblina — visão limitada.</td></tr></tbody></table>
 
-#### 👀 **Sensores:**
+### 1.2 Determinismo
 
-* O agente consegue **"ver" o tabuleiro atual** e a posição do espaço vazio.
+<table data-card-size="large" data-view="cards"><thead><tr><th>Tipo</th><th>Descrição</th><th>Exemplo</th></tr></thead><tbody><tr><td><strong>Determinístico</strong></td><td>O resultado das ações é previsível e não envolve incerteza.</td><td>Resolver um quebra-cabeça.</td></tr><tr><td><strong>Estocástico</strong></td><td>As ações podem levar a diferentes resultados, mesmo no mesmo estado.</td><td>Jogo de pôquer — depende de sorte e blefe.</td></tr></tbody></table>
 
-#### 🛠️ **Atuadores (movimentos possíveis):**
+### 1.3 Episodicidade
 
-* CIMA
-* BAIXO
-* ESQUERDA
-* DIREITA
+<table data-card-size="large" data-view="cards"><thead><tr><th>Tipo</th><th>Descrição</th><th>Exemplo</th></tr></thead><tbody><tr><td><strong>Episódico</strong></td><td>As ações e percepções são independentes entre si.</td><td>Classificação de imagens médicas.</td></tr><tr><td><strong>Sequencial</strong></td><td>As ações atuais influenciam as percepções e decisões futuras.</td><td>Jogo de xadrez ou dirigir um carro.</td></tr></tbody></table>
 
-#### 🔄 **Exemplo: Estado Inicial**
+### 1.4 Dinamicidade
 
-```
-1 2 3
-4 0 6
-7 5 8
-```
+<table data-card-size="large" data-view="cards"><thead><tr><th>Tipo</th><th>Descrição</th><th>Exemplo</th></tr></thead><tbody><tr><td><strong>Estático</strong></td><td>O ambiente não muda enquanto o agente decide o que fazer.</td><td>Resolver palavras cruzadas.</td></tr><tr><td><strong>Dinâmico</strong></td><td>O ambiente pode mudar a qualquer momento, mesmo sem ação do agente.</td><td>Controlar um drone — o vento altera o ambiente.</td></tr><tr><td><strong>Semi-dinâmico</strong></td><td>O ambiente é estático, mas a performance do agente pode piorar com o tempo.</td><td>Prova com tempo — ambiente fixo, tempo importa.</td></tr></tbody></table>
 
-#### 🔧 **Ações possíveis a partir desse estado:**
+### 1.5 Continuidade
 
-| Ação     | Resultado                         |
-| -------- | --------------------------------- |
-| CIMA     | `0` troca com o número acima      |
-| BAIXO    | `0` troca com o número abaixo     |
-| ESQUERDA | `0` troca com o número à esquerda |
-| DIREITA  | `0` troca com o número à direita  |
+<table data-card-size="large" data-view="cards"><thead><tr><th>Tipo</th><th>Descrição</th><th>Exemplo</th></tr></thead><tbody><tr><td><strong>Discreto</strong></td><td>O agente possui percepções e ações bem definidas e finitas.</td><td>Jogo da velha ou xadrez.</td></tr><tr><td><strong>Contínuo</strong></td><td>As percepções e/ou ações são baseadas em valores contínuos (infinas possibilidades).</td><td>Controle de um braço robótico.</td></tr></tbody></table>
 
-Exemplo:\
-Aplicando **DIREITA**:
+### 1.6 Número de Agentes
 
-```
-ANTES:                DEPOIS:
-1 2 3                 1 2 3
-4 0 6     ---->       4 6 0
-7 5 8                 7 5 8
-```
+<table data-card-size="large" data-view="cards"><thead><tr><th>Tipo</th><th>Descrição</th><th>Exemplo</th></tr></thead><tbody><tr><td><strong>Agente Único</strong></td><td>Apenas um agente atua no ambiente, sem interferência de outros.</td><td>Robô limpando uma sala vazia.</td></tr><tr><td><strong>Multi-agente</strong></td><td>Há vários agentes interagindo, cooperando ou competindo entre si.</td><td>Jogo de futebol de robôs ou mercado financeiro com bots.</td></tr></tbody></table>
 
-#### 🧩 **1) Estado Inicial**
+***
 
-O tabuleiro como ele está no começo.
+## 2. Tipos de Agentes
 
-#### 🚶 **2) Ações**
+* **Agentes de reflexo simples**: Reagem diretamente à percepção atual.
+* **Agentes baseados em modelo**: Mantêm representação interna do estado do mundo.
+* **Agentes baseados em objetivos**: Agem para atingir objetivos específicos.
+* **Agentes com aprendizagem**: Adaptam-se com base na experiência.
+* **Agentes de resolução de problemas**: Planejam sequências de ações para alcançar um objetivo.
 
-Mover a peça para **cima, baixo, esquerda ou direita** do espaço vazio.
+***
 
-#### 🔁 **3) Função Sucessora**
+## 3. Agentes de Resolução de Problemas
 
-Para cada ação válida, o agente gera um novo estado:
+* Utilizam **representações atômicas** dos estados (sem estrutura interna).
+* Focados em:
+  * **Maximizar a medida de desempenho**
+  * **Alcançar um objetivo**
+  * **Planejar ações futuras**
 
-```python
-função_sucessora(estado_atual):
-    vizinhos = []
-    para cada ação em [cima, baixo, esquerda, direita]:
-        se for possível aplicar a ação:
-            novo_estado = aplicar_acao(estado_atual, ação)
-            vizinhos.append(novo_estado)
-    retorna vizinhos
-```
+#### Processo
 
-#### ✅ **4) Teste do Objetivo**
+1. **Formulação do objetivo**: o que o agente deseja alcançar.
+2. **Formulação do problema**: como o agente pode alcançar o objetivo.
 
-Verifica se o tabuleiro está na seguinte configuração:
+***
 
-```
-1 2 3
-4 5 6
-7 8 0
-```
+## 4. Componentes de um Problema de Busca
 
-#### 💰 **5) Custo do Caminho**
+Todo problema de busca pode ser descrito por:
 
-Cada movimento custa **+1**.
+1. **Estado inicial**: ponto de partida do agente.
+2. **Ações**: conjunto de operações possíveis.
+3. **Modelo de transição**: resultado da aplicação de uma ação.
+4. **Teste de objetivo**: verificação se o objetivo foi alcançado.
+5. **Custo do caminho**: soma dos custos das ações realizadas.
 
-### **Missionários e Canibais**
+> O espaço de estados é representado por um **grafo dirigido**:
+>
+> * **Vértices**: estados
+> * **Arestas**: ações entre estados
 
-Temos 3 missionários e 3 canibais em uma margem do rio. O barco pode levar **1 ou 2 pessoas por vez**. Você precisa atravessar todos para o outro lado **sem deixar os canibais em maioria** em nenhum lado.
+***
 
-#### 👀 **Sensores:**
+## 5. Exemplos de Problemas
 
-* Quantas pessoas há em cada margem.
-* Onde está o barco.
+### :broom: Mundo do Aspirador de Pó
 
-#### 🛠️ **Atuadores:**
+<table><thead><tr><th width="190">Elemento</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Estado inicial</strong></td><td>Localização do aspirador (ex: A ou B) e estado de limpeza (sujo/limpo).</td></tr><tr><td><strong>Ações</strong></td><td>Esquerda, Direita, Aspirar, Nada.</td></tr><tr><td><strong>Modelo de transição</strong></td><td>A ação muda a posição ou o estado do local (de sujo para limpo).</td></tr><tr><td><strong>Teste de objetivo</strong></td><td>Todos os locais estão limpos.</td></tr><tr><td><strong>Custo do caminho</strong></td><td>Número de ações executadas (ou energia consumida, ou tempo).</td></tr></tbody></table>
 
-* Mover o barco (DIR ou ESQ)
-* Colocar/tirar missionários ou canibais no barco
+### :jigsaw: Quebra-Cabeça de 8 Peças
 
-#### 🧩 **1) Estado Inicial**
+<table><thead><tr><th width="188.5">Elemento</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Estado inicial</strong></td><td>Posição atual das 8 peças e do espaço vazio no tabuleiro 3x3.</td></tr><tr><td><strong>Ações</strong></td><td>Mover peça para cima, baixo, esquerda ou direita (se houver espaço).</td></tr><tr><td><strong>Modelo de transição</strong></td><td>Troca da peça com o espaço vazio.</td></tr><tr><td><strong>Teste de objetivo</strong></td><td>Posições das peças correspondem ao estado final desejado.</td></tr><tr><td><strong>Custo do caminho</strong></td><td>Quantidade de movimentos (pode ser uniforme ou ponderado).</td></tr></tbody></table>
 
-```
-Margem esquerda: 3 missionários, 3 canibais, barco
-Margem direita: vazia
-```
+### :crown: Problema das 8 Rainhas
 
-Visual:
+<table><thead><tr><th width="189">Elemento</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Estado inicial</strong></td><td>Tabuleiro vazio.</td></tr><tr><td><strong>Ações</strong></td><td>Colocar uma rainha em uma linha, respeitando as restrições.</td></tr><tr><td><strong>Modelo de transição</strong></td><td>Avança para a próxima linha com posição válida para a rainha.</td></tr><tr><td><strong>Teste de objetivo</strong></td><td>Oito rainhas posicionadas sem atacar umas às outras.</td></tr><tr><td><strong>Custo do caminho</strong></td><td>Número de rainhas colocadas (geralmente uniforme).</td></tr></tbody></table>
 
-```
-[ C C C M M M | B |    |       ]
-```
+### :door: Labirinto
 
-#### 🚶 **2) Ações possíveis**
+<table><thead><tr><th width="192">Elemento</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Estado inicial</strong></td><td>Posição inicial do agente no labirinto.</td></tr><tr><td><strong>Ações</strong></td><td>Mover-se para cima, baixo, esquerda ou direita (se permitido).</td></tr><tr><td><strong>Modelo de transição</strong></td><td>Movimento para a nova célula do labirinto.</td></tr><tr><td><strong>Teste de objetivo</strong></td><td>O agente alcança a posição de destino (ex: ossinho 🦴 para o cão 🐶).</td></tr><tr><td><strong>Custo do caminho</strong></td><td>Número de passos (ou distância total percorrida).</td></tr></tbody></table>
 
-* Enviar no barco:
-  * 1 missionário
-  * 1 canibal
-  * 2 missionários
-  * 2 canibais
-  * 1 missionário + 1 canibal\
-    → Tanto **ida quanto volta**!
+### :ice\_cube: Cubo Mágico (Rubik's Cube)
 
-#### 🔁 **3) Função Sucessora**
+<table><thead><tr><th width="191">Elemento</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Estado inicial</strong></td><td>Disposição atual das cores nas faces do cubo.</td></tr><tr><td><strong>Ações</strong></td><td>Rotacionar uma das 6 faces em sentido horário/anti-horário.</td></tr><tr><td><strong>Modelo de transição</strong></td><td>Aplicação de uma rotação altera os adesivos em 3 eixos.</td></tr><tr><td><strong>Teste de objetivo</strong></td><td>Todas as faces do cubo têm cores uniformes.</td></tr><tr><td><strong>Custo do caminho</strong></td><td>Número de rotações realizadas.</td></tr></tbody></table>
 
-Para cada ação válida, gerar o novo estado, **desde que** a margem que ficar não tenha mais canibais que missionários.
+## :potable\_water: Problema das Garrafas (5L e 2L)
 
-```python
-função_sucessora(estado_atual):
-    vizinhos = []
-    para cada ação:
-        novo_estado = aplicar_acao(estado_atual, ação)
-        se novo_estado for seguro (não come ninguém):
-            vizinhos.append(novo_estado)
-    retorna vizinhos
-```
+<table><thead><tr><th width="191">Elemento</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Estado inicial</strong></td><td>Garrafa de 5L cheia; garrafa de 2L vazia.</td></tr><tr><td><strong>Ações</strong></td><td>Transferir água, esvaziar garrafa, encher garrafa.</td></tr><tr><td><strong>Modelo de transição</strong></td><td>O volume das garrafas muda conforme a ação.</td></tr><tr><td><strong>Teste de objetivo</strong></td><td>Garrafa de 2L contém exatamente 1 litro.</td></tr><tr><td><strong>Custo do caminho</strong></td><td>Número de ações realizadas (ou tempo/energia consumida).</td></tr></tbody></table>
 
-#### ✅ **4) Teste do Objetivo**
-
-Todos os missionários e canibais estão na margem direita:
-
-```
-[      |    | B | C C C M M M ]
-```
-
-#### 💰 **5) Custo do Caminho**
-
-Cada travessia custa **+1**.
-
-### **Lobo, Cabra e Alface**
-
-#### 🧠 **Resumo do Problema:**
-
-Você é um fazendeiro e precisa atravessar o rio com:
-
-* 🐺 Lobo
-* 🐐 Cabra
-* 🥬 Alface
-
-O barco só leva você e **um item por vez**.\
-⚠️ Se o lobo ficar sozinho com a cabra → 💀\
-⚠️ Se a cabra ficar sozinha com a alface → 💀
-
-#### 👀 **Sensores:**
-
-* Onde estão o fazendeiro e os itens.
-
-#### 🛠️ **Atuadores:**
-
-* Levar o lobo / cabra / alface
-* Voltar sozinho
-
-#### 🧩 **1) Estado Inicial**
-
-```
-Margem esquerda: Fazendeiro, Lobo, Cabra, Alface
-Margem direita: vazia
-```
-
-Visual:
-
-```
-[ F, 🐺, 🐐, 🥬 ] ~~~~ [     ]
-```
-
-#### 🚶 **2) Ações possíveis**
-
-* Levar 1 item (ou nada) para o outro lado.
-
-Exemplos:
-
-* Levar a cabra
-* Levar o lobo
-* Voltar sozinho
-
-#### 🔁 **3) Função Sucessora**
-
-Aplica as ações e verifica se o estado resultante é **seguro**:
-
-```python
-função_sucessora(estado_atual):
-    vizinhos = []
-    para cada item em [nada, lobo, cabra, alface]:
-        novo_estado = atravessar(estado_atual, item)
-        se estado_novo é seguro:
-            vizinhos.append(novo_estado)
-    retorna vizinhos
-```
-
-#### ✅ **4) Teste do Objetivo**
-
-Todos os itens e o fazendeiro estão na margem direita:
-
-```
-[     ] ~~~~ [ F, 🐺, 🐐, 🥬 ]
-```
-
-#### 💰 **5) Custo do Caminho**
-
-Cada travessia custa **+1**.
-
-
+***
 
 ## :books: **Referências Bibliográficas**
 

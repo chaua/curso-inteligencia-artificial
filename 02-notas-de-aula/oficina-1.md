@@ -1,4 +1,4 @@
-# 🤖 Oficina I
+# 🛠️ Oficina 1
 
 ## 1) Caixeiro Viajante&#x20;
 
@@ -25,6 +25,8 @@ D   20  25  30   -
 ```
 
 Começando pela cidade **A**, qual o menor caminho possível que passa por todas as cidades e retorna a A?
+
+***
 
 ## 2) Jarros de Água
 
@@ -55,7 +57,9 @@ Ações permitidas:
 
 Qual sequência de ações resulta em exatamente 2 litros em um dos jarros?
 
-## **N-Rainhas**
+***
+
+## **3) N-Rainhas**
 
 O objetivo é colocar **N rainhas** em um tabuleiro de xadrez NxN de forma que **nenhuma rainha ataque outra**. Lembre-se: uma rainha pode se mover (e atacar) em **linhas, colunas e diagonais**. Você deve encontrar uma **configuração válida**.
 

@@ -2,7 +2,7 @@
 description: Conceito, história, evolução e impacto social da Inteligência Artificial.
 ---
 
-# 🤖 Aula 02 - Fundamentos da IA
+# 🤖 Aula 02 - Introdução à IA
 
 {% hint style="info" %}
 ## **Material da aula**
@@ -11,23 +11,23 @@ description: Conceito, história, evolução e impacto social da Inteligência A
 * **Capítulo 1 - RUSSELL, Stuart J.; NORVIG, Peter.** _Inteligência Artificial: Uma Abordagem Moderna._ 3. ed. São Paulo: Prentice Hall, 2010.&#x20;
 {% endhint %}
 
-## :closed\_book: **Introdução**
+## 1. **Introdução**
 
 A Inteligência Artificial (IA) é um dos ramos mais inovadores da Ciência da Computação, focado em criar sistemas que simulam a capacidade humana de raciocinar, aprender e tomar decisões. Para compreender seus fundamentos, é essencial entender os conceitos de **inteligência** e **artificialidade**.
 
-### **O que é inteligência?**
+### **1.1 O que é inteligência?**
 
 A inteligência pode ser definida como:
 
 * Faculdade de conhecer, compreender e aprender.
 * Capacidade de resolver problemas e se adaptar a novas situações.
 
-### **O que é artificial?**
+### **1.2 O que é artificial?**
 
 * Algo **produzido pelo ser humano**, e não pela natureza.
 * Quando aplicado à inteligência, refere-se a sistemas projetados para simular aspectos do pensamento humano.
 
-### **O que é Inteligência Artificial?**
+### **1.3 O que é Inteligência Artificial?**
 
 A IA busca dotar computadores da capacidade de:
 
@@ -42,23 +42,25 @@ De acordo com **Russell e Norvig (2010)**, a IA pode ser classificada em **quatr
 3. **Sistemas que agem como humanos**
 4. **Sistemas que agem racionalmente**
 
-## :closed\_book: **Sistemas que Pensam como Humanos**
+***
+
+## **2. Sistemas que Pensam como Humanos**
 
 Esses sistemas tentam imitar o **pensamento humano** e sua tomada de decisões.
 
-### **Definições Importantes**
+### **2.1 Definições**&#x20;
 
 * **John Haugeland**: IA como a construção de **máquinas com mentes**.
 * **Richard Bellman**: IA como a automação de atividades **associadas ao pensamento humano**, como **aprendizado e resolução de problemas**.
 
-### **Como a IA pode Pensar como Humanos?**
+### **2.2 Como a IA pode Pensar como Humanos?**
 
 Para entender como a mente humana funciona, utilizam-se duas abordagens:
 
 1. **Introspecção**: Tentativa de entender a mente com base na própria experiência.
 2. **Experimentação**: Aplicação de métodos da **psicologia cognitiva** para estudar o cérebro.
 
-### **Sistemas Especialistas**
+### **2.3 Sistemas Especialistas**
 
 Sistemas de IA projetados para **resolver problemas específicos** com base no conhecimento de especialistas.&#x20;
 
@@ -76,22 +78,24 @@ Sistemas de IA projetados para **resolver problemas específicos** com base no c
 
 **Exemplo:** Um sistema especialista médico pode diagnosticar doenças com base nos sintomas do paciente.
 
-## :closed\_book: **Sistemas que Agem como Humanos**
+***
+
+## **3. Sistemas que Agem como Humanos**
 
 O foco aqui é **imitar o comportamento humano**, não apenas pensar como um humano.
 
-### **Definições**
+### **3.1 Definições**
 
 * **Raymond Kurzweil**: IA é a arte de criar máquinas que realizam **funções que exigem inteligência humana**.
 * **Elaine Rich**: IA estuda **como fazer os computadores executarem tarefas melhor do que humanos**.
 
-### **Teste de Turing**
+### **3.2 Teste de Turing**
 
 Proposto por **Alan Turing** em 1950, avalia a capacidade de uma máquina se passar por um humano em uma conversa. Se um juiz **não conseguir distinguir** o computador do ser humano, a máquina "passa" no teste.
 
 **Exemplo:** O chatbot **ELIZA**, criado nos anos 60, simulava um psicoterapeuta, respondendo perguntas de forma estruturada.
 
-### **Modelos Computacionais de Emoções**
+### **3.3 Modelos Computacionais de Emoções**
 
 Sistemas modernos tentam modelar emoções para melhorar interações sociais e comportamentos inteligentes.
 
@@ -103,38 +107,44 @@ Sistemas modernos tentam modelar emoções para melhorar interações sociais e 
 
 **Exemplo:** Um assistente virtual que percebe se um usuário está frustrado e ajusta sua resposta para ser mais amigável.
 
-## :closed\_book: **Sistemas que Pensam Racionalmente**
+***
+
+## **4. Sistemas que Pensam Racionalmente**
 
 Esses sistemas focam em raciocinar **da forma mais lógica possível**.
 
-### **Definições**
+### **4.1 Definições**
 
 * **Eugene Charniak**: Modelagem computacional das faculdades mentais.
 * **Patrick Winston**: Estudo da computação que permite **perceber, pensar e agir**.
 
-### **Lógica e IA**
+### **4.2 Lógica e IA**
 
 A lógica matemática é usada para capturar leis do raciocínio, utilizando símbolos e regras.
 
 **Exemplo:** Um sistema que resolve **problemas matemáticos** aplicando regras formais de inferência.
 
-## :closed\_book: **Sistemas que Agem Racionalmente**
+***
+
+## **5. Sistemas que Agem Racionalmente**
 
 O objetivo desses sistemas é **fazer a coisa certa**, com base nas informações disponíveis.
 
-### **Definições**
+### **5.1 Definições**
 
 * **David Poole**: IA é o estudo do **design de agentes inteligentes**.
 * **Nils Nilsson**: IA preocupa-se com **comportamentos inteligentes em artefatos**.
 
-### **O que significa agir racionalmente?**
+### **5.2 O que significa agir racionalmente?**
 
 * Tomar decisões baseadas em objetivos claros.
 * Utilizar informações para maximizar o sucesso.
 
 **Exemplo:** Carros autônomos tomam decisões para evitar acidentes e otimizar trajetos.
 
-## :closed\_book: **Considerações Finais**
+***
+
+## **Considerações Finais**
 
 A Inteligência Artificial abrange **diferentes abordagens** para imitar e aprimorar o pensamento e comportamento humano. Compreender seus fundamentos é essencial para o desenvolvimento de novas tecnologias e aplicações inovadoras.
 
@@ -145,15 +155,9 @@ Resumo das principais abordagens da IA:
 * **Agir como humanos**: Simulação do comportamento humano.
 * **Agir racionalmente:** Tomar decisões eficientes e otimizadas.
 
+***
+
 ## :books: **Referências Bibliográficas**
 
 * **RUSSELL, Stuart J.; NORVIG, Peter.** _Inteligência Artificial: Uma Abordagem Moderna._ 3. ed. São Paulo: Prentice Hall, 2010
-
-
-
-
-
-
-
-
 
