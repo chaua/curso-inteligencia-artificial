@@ -16,6 +16,7 @@
     * [Page 1](02-notas-de-aula/aula-07-busca-com-infomacao/page-1.md)
     * [Page 2](02-notas-de-aula/aula-07-busca-com-infomacao/page-2.md)
   * [🛠️ Oficina 1](02-notas-de-aula/oficina-1.md)
+  * [🛠️ Oficina 3](02-notas-de-aula/oficina-3.md)
 * [Códigos-fontes](03-codigos-fontes/README.md)
   * [💾 Exemplo](03-codigos-fontes/exemplo.md)
 * [Provas](04-provas/README.md)
