@@ -31,7 +31,7 @@ Algoritmo que utiliza apenas a heurística $$h(n)$$ como critério de seleção,
    * Se for o objetivo, encerra.
    * Caso contrário, insere os sucessores na fila com prioridade baseada apenas em  $$h(n)$$.
 
-<figure><img src="../.gitbook/assets/busca_gulosa.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/busca_gulosa.png" alt=""><figcaption></figcaption></figure>
 
 #### Características
 
@@ -57,7 +57,7 @@ $$
    * Se for o objetivo, encerra.
    * Caso contrário, expande os sucessores, atualizando $$g(n)$$ e reavaliando $$f(n)$$.
 
-<figure><img src="../.gitbook/assets/busca_a_.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/busca_a_.png" alt=""><figcaption></figcaption></figure>
 
 #### Requisitos para Otimalidade
 
