@@ -8,7 +8,7 @@ description: Estruturas de problemas, espaços de estados e ambientes de busca.
 ## **Material da aula**
 
 * [Slides](slides/Aula05%20-%20Resolu%C3%A7%C3%A3o%20de%20problemas%20por%20meio%20de%20busca.pdf)
-* **Capítulo 3 - RUSSELL, Stuart J.; NORVIG, Peter.** _Inteligência Artificial: Uma Abordagem Moderna._ 3. ed. São Paulo: Prentice Hall, 2010.&#x20;
+* **Capítulo 3.1 - 3.4 - RUSSELL, Stuart J.; NORVIG, Peter.** _Inteligência Artificial: Uma Abordagem Moderna._ 3. ed. São Paulo: Prentice Hall, 2010.&#x20;
 {% endhint %}
 
 ## 1. Introdução
