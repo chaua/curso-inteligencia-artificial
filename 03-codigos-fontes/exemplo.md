@@ -10,3 +10,7 @@
 
 * [aula06\_busca\_a\_estrela.ipynb](aula06_busca_a_estrela.ipynb)
 * [aula06\_busca\_gulosa.ipynb](aula06_busca_gulosa.ipynb)
+
+## Aulas 12
+
+* [aula12\_algoritmos\_geneticos.ipynb](aula12_algoritmos_geneticos.ipynb)
