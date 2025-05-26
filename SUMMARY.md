@@ -16,6 +16,7 @@
   * [🧗‍♀️ Aula 08 - Busca Local](02-notas-de-aula/aula-08-busca-local.md)
   * [🧬 Aula 11 - Algoritmos Genéticos](02-notas-de-aula/aula-11-algoritmos-geneticos.md)
   * [🧬 Aula 12 - Algoritmos Genéticos](02-notas-de-aula/aula-12-algoritmos-geneticos.md)
+  * [🧬 Aula 13 - Algoritmos Genéticos](02-notas-de-aula/aula-13-algoritmos-geneticos.md)
   * [🛠️ Oficina 1](02-notas-de-aula/oficina-1.md)
   * [🛠️ Oficina 3](02-notas-de-aula/oficina-3.md)
 * [Códigos-fontes](03-codigos-fontes/README.md)
