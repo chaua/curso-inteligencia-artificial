@@ -19,6 +19,7 @@
   * [🧬 Aula 13 - Algoritmos Genéticos](02-notas-de-aula/aula-13-algoritmos-geneticos.md)
   * [🛠️ Oficina 1](02-notas-de-aula/oficina-1.md)
   * [🛠️ Oficina 3](02-notas-de-aula/oficina-3.md)
+  * [🛠️ Oficina 5](02-notas-de-aula/oficina-5.md)
 * [Códigos-fontes](03-codigos-fontes/README.md)
   * [💾 Aulas](03-codigos-fontes/exemplo.md)
 * [Provas](04-provas/README.md)
