@@ -14,3 +14,7 @@
 ## Aulas 12
 
 * [aula12\_algoritmos\_geneticos.ipynb](aula12_algoritmos_geneticos.ipynb)
+
+## Aula 13
+
+* [aula13\_pso.ipynb](aula13_pso.ipynb)
