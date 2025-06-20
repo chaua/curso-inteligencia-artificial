@@ -28,6 +28,7 @@
   * [📝 Prova 02](04-provas/prova-02.md)
   * [📊 Resultados](04-provas/resultados.md)
   * [📓 Revisão 01](04-provas/revisao-01.md)
+  * [📓 Revisão 02](04-provas/revisao-02.md)
 * [Trabalhos](05-trabalhos/README.md)
   * [📄 Estudo Dirigido 01](05-trabalhos/estudo-dirigido-01.md)
   * [📄 Estudo Dirigido 02](05-trabalhos/estudo-dirigido-02.md)
