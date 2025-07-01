@@ -25,8 +25,6 @@
   * [💾 Aulas](03-codigos-fontes/exemplo.md)
 * [Provas](04-provas/README.md)
   * [📝 Provas](04-provas/prova-01.md)
-  * [📝 Prova 02](04-provas/prova-02.md)
-  * [📊 Resultados](04-provas/resultados.md)
   * [📓 Revisão 01](04-provas/revisao-01.md)
   * [📓 Revisão 02](04-provas/revisao-02.md)
 * [Trabalhos](05-trabalhos/README.md)
